@@ -79,6 +79,8 @@
         <img src="gloves.jpg" alt="Selwady Gloves (Product)" class="product-image">
         <h2 style="margin-top: 30px;">Select Your Size & Pay</h2>
 
+        <p><em>$117 — includes shipping anywhere in the United States</em></p>
+
         <label for="size"><strong>Choose Your Glove Size:</strong></label><br>
         <select id="size">
             <option value="">-- Select Size --</option>
@@ -89,7 +91,7 @@
             <option value="14oz">14oz</option>
         </select><br>
 
-        <button onclick="payWithVenmo()" class="btn-buy">Buy Now with Venmo - $100</button>
+        <button onclick="payWithVenmo()" class="btn-buy">Buy Now with Venmo - $117</button>
 
         <p id="error" style="color: red; display: none; margin-top: 10px;">Please select a size before continuing.</p>
 
@@ -101,14 +103,14 @@
                     return;
                 }
                 document.getElementById('error').style.display = 'none';
-                var venmoURL = "https://venmo.com/selwadymma?txn=pay&amount=100&note=SelwadyMMA%20Gloves%20Size%20" + encodeURIComponent(size) + "%20+ShippingInfo";
+                var venmoURL = "https://venmo.com/selwadymma?txn=pay&amount=117&note=SelwadyMMA%20Gloves%20Size%20" + encodeURIComponent(size) + "%20+ShippingInfo";
                 window.open(venmoURL, '_blank');
             }
         </script>
 
         <h3 style="margin-top: 30px;">Or Pay with Zelle</h3>
         <p style="color: #ddd;">
-        ✅ Send $100 via Zelle to: <strong>Selwadymma@gmail.com</strong><br>
+        ✅ Send $117 via Zelle to: <strong>SelwadyMMA@gmail.com</strong><br>
         ✅ Add in the payment note: <strong>"SelwadyMMA Gloves Size [Your Size] and Shipping Info"</strong><br>
         ✅ Then DM us on Instagram <a href="https://www.instagram.com/selwadymma/" target="_blank">@SelwadyMMA</a> with your shipping information to confirm the order!  
         </p>
