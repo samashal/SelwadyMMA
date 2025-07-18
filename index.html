@@ -47,6 +47,7 @@
             text-decoration: none;
             display: inline-block;
             margin-bottom: 30px;
+            cursor: pointer;
         }
         .btn-buy:hover {
             background: #c51118;
@@ -58,6 +59,11 @@
         a {
             color: #00a859;
             text-decoration: none;
+        }
+        select {
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -73,29 +79,42 @@
         <img src="gloves.jpg" alt="Selwady Gloves (Product)" class="product-image">
         <h2 style="margin-top: 30px;">Select Your Size & Pay</h2>
 
-<!-- Venmo Buttons -->
-<p><strong>Pay with Venmo — Click your size below and add your shipping info to the existing Venmo note:</strong></p>
+        <label for="size"><strong>Choose Your Glove Size:</strong></label><br>
+        <select id="size">
+            <option value="">-- Select Size --</option>
+            <option value="6oz">6oz</option>
+            <option value="8oz">8oz</option>
+            <option value="10oz">10oz</option>
+            <option value="12oz">12oz</option>
+            <option value="14oz">14oz</option>
+        </select><br>
 
-<a href="https://venmo.com/selwadymma?txn=pay&amount=100&note=SelwadyMMA%20Gloves%20Size%206oz+ShippingInfo" class="btn-buy">Buy 6oz - $100</a><br><br>
+        <button onclick="payWithVenmo()" class="btn-buy">Buy Now with Venmo - $100</button>
 
-<a href="https://venmo.com/selwadymma?txn=pay&amount=100&note=SelwadyMMA%20Gloves%20Size%208oz+ShippingInfo" class="btn-buy">Buy 8oz - $100</a><br><br>
+        <p id="error" style="color: red; display: none; margin-top: 10px;">Please select a size before continuing.</p>
 
-<a href="https://venmo.com/selwadymma?txn=pay&amount=100&note=SelwadyMMA%20Gloves%20Size%2010oz+ShippingInfo" class="btn-buy">Buy 10oz - $100</a><br><br>
+        <script>
+            function payWithVenmo() {
+                var size = document.getElementById('size').value;
+                if (!size) {
+                    document.getElementById('error').style.display = 'block';
+                    return;
+                }
+                document.getElementById('error').style.display = 'none';
+                var venmoURL = "https://venmo.com/selwadymma?txn=pay&amount=100&note=SelwadyMMA%20Gloves%20Size%20" + encodeURIComponent(size) + "%20+ShippingInfo";
+                window.open(venmoURL, '_blank');
+            }
+        </script>
 
-<a href="https://venmo.com/selwadymma?txn=pay&amount=100&note=SelwadyMMA%20Gloves%20Size%2012oz+ShippingInfo" class="btn-buy">Buy 12oz - $100</a><br><br>
-
-<a href="https://venmo.com/selwadymma?txn=pay&amount=100&note=SelwadyMMA%20Gloves%20Size%2014oz+ShippingInfo" class="btn-buy">Buy 14oz - $100</a><br><br>
-
-<!-- Zelle Instructions -->
-<h3 style="margin-top: 30px;">Or Pay with Zelle</h3>
-<p style="color: #ddd;">
-✅ Send $100 via Zelle to: <strong>youremail@domain.com</strong><br>
-✅ Add in the payment note: <strong>"SelwadyMMA Gloves Size [Your Size]"</strong><br>
-✅ Then DM us on Instagram <a href="https://www.instagram.com/selwadymma/" target="_blank">@SelwadyMMA</a> with your shipping info!  
-</p>
+        <h3 style="margin-top: 30px;">Or Pay with Zelle</h3>
+        <p style="color: #ddd;">
+        ✅ Send $100 via Zelle to: <strong>youremail@domain.com</strong><br>
+        ✅ Add in the payment note: <strong>"SelwadyMMA Gloves Size [Your Size]"</strong><br>
+        ✅ Then DM us on Instagram <a href="https://www.instagram.com/selwadymma/" target="_blank">@SelwadyMMA</a> with your shipping info!  
+        </p>
     </main>
 
-      <footer>
+    <footer>
         <p>Follow <a href="https://www.instagram.com/selwadymma/" target="_blank">@SelwadyMMA</a> on Instagram</p>
         <div class="copyright">© 2025 SelwadyMMA. All rights reserved.</div>
     </footer>
