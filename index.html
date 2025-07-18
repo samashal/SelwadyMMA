@@ -10,12 +10,16 @@
             color: #fff;
             font-family: Arial, sans-serif;
             margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            min-height: 100vh;
         }
-        header {
+        header, main, footer {
+            width: 100%;
+            max-width: 500px;
             padding: 20px;
         }
         header img {
@@ -30,7 +34,7 @@
             margin-bottom: 20px;
         }
         .product-image {
-            width: 80%;
+            width: 100%;
             max-width: 400px;
             border: 2px solid #fff;
             border-radius: 10px;
@@ -50,10 +54,6 @@
         .btn-buy:hover {
             background: #c51118;
         }
-        footer {
-            margin-bottom: 20px;
-            font-size: 0.9em;
-        }
         a {
             color: #00a859;
             text-decoration: none;
@@ -68,9 +68,11 @@
         <p>Limited Edition — Designed by UFC Fighter Abdul Kareem Al Selwady</p>
     </header>
 
-    <img src="gloves.jpg" alt="Selwady Gloves" class="product-image">
-
-    <a href="https://buy.stripe.com/test_checkout_link_placeholder" class="btn-buy">Buy Now</a>
+    <main>
+        <img src="gloves.jpg" alt="Selwady Gloves" class="product-image">
+        <br>
+        <a href="https://buy.stripe.com/test_checkout_link_placeholder" class="btn-buy">Buy Now</a>
+    </main>
 
     <footer>
         <p>Follow <a href="https://www.instagram.com/selwadymma/" target="_blank">@SelwadyMMA</a> on Instagram</p>
